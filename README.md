@@ -21,4 +21,4 @@ Dette prosjektet er en flersidig nettside som presenterer informasjon om planete
 #### Lenker
 * [Link til Figma designet](https://www.figma.com/design/oZgSZs2CJY9Bkm9NcluxXk/Sommerprosjektet?node-id=0-1&t=1kXTNfoMt2jlnkgb-1)
 * [GitHub Pages]()
-* [Link til Vercel]()
+* [Link til Vercel](https://romferd.vercel.app/)
