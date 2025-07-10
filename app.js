@@ -91,3 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// For tilgjengelighet: toggle også på tastatur (Enter eller Space)
+hamburger.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    hamburger.click();
+  }
+});
