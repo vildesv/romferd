@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  // Planet-info funksjonalitet (kun hvis elementene finnes)
+  // Planet-info funksjonalitet
   const infoBox = document.getElementById("planetInfo");
   const planetIcons = document.querySelectorAll(".planet-icon");
 
@@ -80,30 +80,82 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Til toppen-knapp funksjonalitet
+  // Data for dvergplanetene
+  const dvergData = {
+    pluto: {
+      navn: "Pluto",
+      fakta:
+        "Pluto ble tidligere regnet som den niende planeten i solsystemet, men ble i 2006 omklassifisert til dvergplanet av Den internasjonale astronomiske union. Den har en tynn atmosfære som hovedsakelig består av nitrogen, og den har fem kjente måner – hvor Charon er den største. Overflaten viser spor etter is, fjell og mulige geologiske prosesser.",
+    },
+    ceres: {
+      navn: "Ceres",
+      fakta:
+        "Ceres er den største gjenstanden i asteroidebeltet mellom Mars og Jupiter, og den eneste dvergplaneten som befinner seg i de indre delene av solsystemet. Overflaten består av stein og is, og det finnes tegn på tidligere geologisk aktivitet og mulig frosset vann under overflaten.",
+    },
+    eris: {
+      navn: "Eris",
+      fakta:
+        "Eris er en av de største kjente dvergplanetene og ligger i det fjerne Kuiperbeltet. Den er litt mindre enn Pluto i diameter, men tyngre. Oppdagelsen av Eris var en av grunnene til at Pluto mistet sin status som planet i 2006. Den har minst én måne, Dysnomia.",
+    },
+    makemake: {
+      navn: "Makemake",
+      fakta:
+        "Makemake er en lys dvergplanet i Kuiperbeltet. Den har en sterk refleksjonsevne og ble oppdaget i 2005. Det er lite kjent om overflaten, men den ser ut til å være dekket av metanis og etan. Den har én bekreftet måne.",
+    },
+    haumea: {
+      navn: "Haumea",
+      fakta:
+        "Haumea er en raskt roterende dvergplanet som har en avlang form. Den ligger også i Kuiperbeltet og har to små måner. Rotasjonen gjør at Haumea har et svært kort døgn, og overflaten ser ut til å være dekket av krystallinsk is.",
+    },
+  };
+
+  // Dverg-info funksjonalitet
+  const dvergIcons = document.querySelectorAll(".dverg-icon");
+  const dvergInfoBox = document.getElementById("dvergInfo");
+
+  if (dvergIcons.length > 0 && dvergInfoBox) {
+    dvergIcons.forEach((icon) => {
+      icon.addEventListener("click", () => {
+        const key = icon.dataset.dverg;
+        const dverg = dvergData[key];
+        dvergInfoBox.innerHTML = `
+          <h3>${dverg.navn}</h3>
+          <p>${dverg.fakta}</p>
+        `;
+        dvergInfoBox.classList.remove("visible");
+        void dvergInfoBox.offsetWidth; // trigger reflow
+        dvergInfoBox.classList.add("visible");
+      });
+    });
+  }
+
+  // Til toppen-knapp
   const toTopBtn = document.getElementById("toTopBtn");
   if (toTopBtn) {
     window.addEventListener("scroll", () => {
       toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
     });
+
     toTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-});
 
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
+  // Hamburger-meny
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
 
-hamburger.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.toggle('open');
-  hamburger.setAttribute('aria-expanded', isOpen);
-});
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", isOpen);
+    });
 
-// For tilgjengelighet: toggle også på tastatur (Enter eller Space)
-hamburger.addEventListener('keydown', (e) => {
-  if(e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    hamburger.click();
+    hamburger.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        hamburger.click();
+      }
+    });
   }
 });

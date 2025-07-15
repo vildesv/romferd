@@ -184,6 +184,36 @@ nav a.active {
   text-decoration: none;
 }
 
+.dverg-info {
+   clear: both;
+  margin-top: 4rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dverg-info.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dverg-info h3 {
+  color: var(--highlight-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-family: "Orbitron", sans-serif;
+}
+
 .dvergplaneter-bilder {
   display: flex;
   justify-content: center;
@@ -192,17 +222,23 @@ nav a.active {
   flex-wrap: nowrap;
 }
 
-.dvergplaneter-bilder .img {
+.dvergplaneter-bilder .dverg-icon {
   width: 150px;
   height: auto;
   border-radius: 8px;
   margin: 0;
 }
 
-.haumea {
+.dvergplaneter-bilder .haumea {
   width: 150px;
   height: 100px;
   object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Flytt litt ned for å midtstille visuelt */
+  margin-top: 20px; /* juster verdien etter hva som ser best ut */
 }
 
 .sun-section {
