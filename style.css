@@ -99,11 +99,12 @@ nav a.active {
 .section {
   width: 100%;
   max-width: 1000px;
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 1.5rem 5rem 1.5rem; 
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4rem; /* luft mellom seksjoner */
 }
 
 .section p {
@@ -185,7 +186,7 @@ nav a.active {
 }
 
 .dverg-info {
-   clear: both;
+  clear: both;
   margin-top: 4rem;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 2rem;
@@ -218,7 +219,7 @@ nav a.active {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  margin-top: 2.5rem;
+  margin-top: 4rem;
   flex-wrap: nowrap;
 }
 
@@ -227,6 +228,12 @@ nav a.active {
   height: auto;
   border-radius: 8px;
   margin: 0;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.dvergplaneter-bilder .dverg-icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
 }
 
 .dvergplaneter-bilder .haumea {
@@ -236,9 +243,7 @@ nav a.active {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
-  /* Flytt litt ned for å midtstille visuelt */
-  margin-top: 20px; /* juster verdien etter hva som ser best ut */
+  margin-top: 20px;
 }
 
 .sun-section {
@@ -254,7 +259,7 @@ nav a.active {
   text-align: center;
 }
 
-.img {
+.sun-img {
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -282,10 +287,12 @@ nav a.active {
   filter: brightness(0.9);
   margin-top: 2rem;
 }
+
 .planet-icon:hover {
   transform: scale(1.2);
   filter: brightness(1.2);
 }
+
 .planet-info {
   margin-top: 2rem;
   background-color: rgba(0, 0, 0, 0.5);
@@ -300,15 +307,18 @@ nav a.active {
   transition: opacity 0.4s ease;
   opacity: 0;
 }
+
 .planet-info.visible {
   opacity: 1;
 }
+
 .planet-info h3 {
   color: var(--highlight-color);
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-family: "Orbitron", sans-serif;
 }
+
 .planet-info p {
   line-height: 1.6;
   font-size: 1rem;
@@ -375,7 +385,7 @@ footer {
   }
   .hero-title {
     font-size: 1.5rem;
-    white-space: normal; 
+    white-space: normal;
   }
   nav ul {
     flex-direction: column;
@@ -384,7 +394,7 @@ footer {
     top: 50px;
     right: 10px;
     border-radius: 8px;
-    display: none; 
+    display: none;
   }
   nav ul.open {
     display: flex;
