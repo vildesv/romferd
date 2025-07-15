@@ -143,19 +143,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Hamburger-meny
   const hamburger = document.querySelector(".hamburger");
-  const mobileMenu = document.querySelector(".mobile-menu");
+  const navLinks = document.querySelector(".nav-links");
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", isOpen);
-    });
+  hamburger.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
 
-    hamburger.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        hamburger.click();
-      }
-    });
-  }
+  // For tastaturnavigasjon (Enter og Space)
+  hamburger.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
 });
