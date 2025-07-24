@@ -4,10 +4,10 @@ Dette prosjektet er en flersidig nettside som presenterer informasjon om planete
 
 #### Prosjektet inneholder følgende
 * Forsiden (hjem-siden) til nettsiden med generell informasjon om solsystemet vårt
-* Informasjonsside som omhandler planetene i solsystemet. Denne siden inneholder interaksjon som håndteres i [app.js](app.js)
+* Informasjonsside som omhandler planetene i solsystemet. 
 * Informasjonsside dedikert til solen 
 * Stylesheet
-* JavaScript-fil for interaktivitet
+* [JavaScript](app.js) for interaktivitet
 * Mappe med bilder
 
 #### Krav og funskjonalitet
